@@ -1,5 +1,6 @@
 package io.quarkus.workshop.superheroes.hero;
 
+import io.micrometer.core.annotation.Timed;
 import io.quarkus.hibernate.reactive.panache.common.WithTransaction;
 import io.smallrye.mutiny.Uni;
 import org.eclipse.microprofile.openapi.annotations.Operation;
@@ -45,6 +46,7 @@ public class HeroResource {
     @GET
     @Path("/random")
     @APIResponse(responseCode = "200", content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Hero.class, required = true)))
+    @Timed("timeGetRandomHero")
     public Uni<RestResponse<Hero>> getRandomHero() {
         return Hero.findRandom()
             .onItem().ifNotNull().transform(h -> {
