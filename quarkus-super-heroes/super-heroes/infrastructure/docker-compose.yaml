@@ -8,7 +8,7 @@ services:
         environment:
             POSTGRES_PASSWORD: password
         volumes:
-            - ./db-init/initialize-databases.sql:/docker-entrypoint-initdb.d/init.sql
+            - ./db-init/initialize-databases.sql:/docker-entrypoint-initdb.d/init.sql:Z
 
     monitoring:
         image: "prom/prometheus:v2.30.3"
@@ -16,7 +16,7 @@ services:
         ports:
           - 9090:9090
         volumes:
-          - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+          - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:Z
 
     zookeeper:
         image: quay.io/strimzi/kafka:0.23.0-kafka-2.8.0
