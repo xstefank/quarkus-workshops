@@ -87,6 +87,12 @@
       <artifactId>quarkus-junit5-mockito</artifactId>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>io.quarkiverse.pact</groupId>
+          <artifactId>quarkus-pact-consumer</artifactId>
+          <version>1.3.0</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
   <build>
     <plugins>
