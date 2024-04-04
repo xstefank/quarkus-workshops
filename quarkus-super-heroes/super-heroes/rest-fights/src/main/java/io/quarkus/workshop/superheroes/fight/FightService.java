@@ -2,6 +2,7 @@ package io.quarkus.workshop.superheroes.fight;
 
 import io.quarkus.workshop.superheroes.fight.client.Hero;
 import io.quarkus.workshop.superheroes.fight.client.HeroProxy;
+import io.quarkus.workshop.superheroes.fight.client.NarrationProxy;
 import io.quarkus.workshop.superheroes.fight.client.Villain;
 import io.quarkus.workshop.superheroes.fight.client.VillainProxy;
 import org.eclipse.microprofile.faulttolerance.Fallback;
@@ -30,7 +31,14 @@ public class FightService {
     @RestClient
     VillainProxy villainProxy;
 
+    @RestClient
+    NarrationProxy narrationProxy;
+
     private final Random random = new Random();
+
+    public String narrateFight(Fight fight) {
+        return narrationProxy.narrate(fight);
+    }
 
     public List<Fight> findAllFights() {
         return Fight.listAll();
