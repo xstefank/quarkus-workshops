@@ -13,6 +13,7 @@
     <modules>
         <module>super-heroes/ui-super-heroes</module>
         <module>super-heroes/rest-villains</module>
+        <module>super-heroes/rest-heroes</module>
     </modules>
     <build>
         <plugins>
@@ -129,7 +130,7 @@
             </activation>
             <modules>
                 <module>super-heroes/rest-villains</module>
-<!--                <module>super-heroes/rest-heroes</module>-->
+                <module>super-heroes/rest-heroes</module>
 <!--                <module>super-heroes/rest-fights</module>-->
             </modules>
         </profile>
