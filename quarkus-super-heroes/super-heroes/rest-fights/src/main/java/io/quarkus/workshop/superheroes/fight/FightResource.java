@@ -49,6 +49,17 @@ public class FightResource {
         return Response.ok(fighters).build();
     }
 
+    @POST
+    @Path("/narrate")
+    @Consumes(APPLICATION_JSON)
+    @Produces(TEXT_PLAIN)
+    public Response narrateFight(@Valid Fight fight) {
+        logger.debug("Narrate the fight " + fight);
+        String narration = service.narrateFight(fight);
+        return Response.status(Response.Status.CREATED).entity(narration).build();
+
+    }
+
     @GET
     public Response getAllFights() {
         List<Fight> fights = service.findAllFights();
