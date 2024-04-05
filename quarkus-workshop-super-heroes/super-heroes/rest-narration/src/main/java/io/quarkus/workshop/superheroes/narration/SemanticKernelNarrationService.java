@@ -36,7 +36,7 @@ public class SemanticKernelNarrationService implements NarrationService {
         OpenAIAsyncClient client = getClient();
 
         // Creates an instance of the TextCompletion service
-        TextCompletion textCompletion = SKBuilders.chatCompletion().withOpenAIClient(client).withModelId("gpt35turbo").build();
+        TextCompletion textCompletion = SKBuilders.chatCompletion().withOpenAIClient(client).withModelId("gpt-3.5-turbo-0125").build();
 
         // Instantiates the Kernel
         Kernel kernel = SKBuilders.kernel().withDefaultAIService(textCompletion).build();

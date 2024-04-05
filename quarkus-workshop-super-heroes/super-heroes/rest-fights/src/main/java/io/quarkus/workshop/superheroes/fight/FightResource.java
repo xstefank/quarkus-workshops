@@ -52,7 +52,7 @@ public class FightResource {
     @GET
     @Path("/randomfighters")
     // tag::adocFaultTolerance[]
-    @Timeout(500) // <-- Added
+    // @Timeout(500) // <-- Added, DevSpaces - needs to be adjusted
     // end::adocFaultTolerance[]
     public Response getRandomFighters() {
         // tag::adocFaultTolerance[]
