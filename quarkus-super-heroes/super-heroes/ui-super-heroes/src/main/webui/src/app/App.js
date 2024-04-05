@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <h1>
-        Welcome to Super Heroes Fight!
+        Welcome to Super Heroes Fight! Hello there!
       </h1>
       <Fight onFight={refreshFights}/>
       <FightList fights={fights}/>
